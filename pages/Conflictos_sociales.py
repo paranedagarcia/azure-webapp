@@ -78,11 +78,13 @@ menu_pages()
 try:
     datos = "https://data.vgclab.cl/public_data/dataset_conflictos_2008-2020.csv"
     # datos = "data/dataset_conflictos_2008-2020.csv"
-    df = pd.read_csv(datos, sep=";", encoding="utf-8", na_values=".")
+    df = pd.read_csv(datos, sep=",", encoding="utf-8",
+                     low_memory=False, na_values=".")
 except:
     st.error("Error al cargar los datos")
     st.stop()
 
+df['fecha'] = pd.to_datetime(df['fecha'], errors='coerce', format='%Y-%m-%d')
 
 # df['fecha'] = pd.to_datetime(df[['año', 'mes', 'dia']].astype(str).agg(
 #     '-'.join, axis=1), errors='coerce', format='mixed', dayfirst=True)
