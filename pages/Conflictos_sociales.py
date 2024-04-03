@@ -84,11 +84,11 @@ except:
     st.stop()
 
 
-df['fecha'] = pd.to_datetime(df[['año', 'mes', 'dia']].astype(str).agg(
-    '-'.join, axis=1), errors='coerce', format='mixed', dayfirst=True)
-# cambiar fecha al inicio
-fecha = df.pop("fecha")
-df.insert(1, "fecha", fecha)
+# df['fecha'] = pd.to_datetime(df[['año', 'mes', 'dia']].astype(str).agg(
+#     '-'.join, axis=1), errors='coerce', format='mixed', dayfirst=True)
+# # cambiar fecha al inicio
+# fecha = df.pop("fecha")
+# df.insert(1, "fecha", fecha)
 
 
 # metricas
