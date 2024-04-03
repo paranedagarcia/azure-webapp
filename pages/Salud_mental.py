@@ -52,7 +52,7 @@ openai_api_key = API_KEY
 
 menu_pages()
 
-filename = "data/dataset_licencias_sample.csv"
+filename = "https://data.vgclab.cl/public_data/dataset_licencias_sample.csv"
 
 columnas = ['FECHA', 'LICENCIA', 'FORMULARIO', 'TRABAJADOR', 'EMISION', 'INICIO', 'DIAS', 'CODIGO', 'TIPO', 'PROFESIONAL', 'ENTIDAD', 'CAJA', 'ESTADO', 'DESDE', 'HASTA',
             'DIASAUT', 'SUBSIDIO', 'CODAUT', 'AUTORIZACION', 'CODPREV', 'RECHAZO', 'SUBCIE10', 'GRUPOCIE10', 'CIE10', 'LIQUIDO', 'SUSESO']
