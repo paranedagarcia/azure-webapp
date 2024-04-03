@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/c02f2e79-6901-4c69-884a-865217de26c6/resourceGroups/dataclinica/providers/Microsoft.Web/sites/vgclabapp",
+    "appService.deploySubpath": "."
+}
