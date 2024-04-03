@@ -245,7 +245,7 @@ with tabPanel:  # graficos
                             showlegend=True,
                             legend=dict(
                                 orientation="h",
-                                title="",
+                                title="Eventos",
                                 yanchor="bottom",
                                 y=1,
                                 xanchor="right",
@@ -277,7 +277,8 @@ with tabPanel:  # graficos
             color="region",
             title="Casos por regiones",
         )
-        fig.update_layout(showlegend=False, xaxis_title="", yaxis_title="")
+        fig.update_layout(showlegend=False,
+                          xaxis_title="Regiones", yaxis_title="Casos")
         st.plotly_chart(fig, use_container_width=True)
 
         st.write("Como es esperable, los eventos son más frecuentes en el conflicto mapuche-estado chileno, dentro de la región de la Araucanía, donde se concentra la mayor cantidad de eventos. Donde el 99,5% de la población indigena pertenece a la etnia mapuche, representando el 23,4% de la población total de esta región. ")
@@ -296,7 +297,9 @@ with tabPanel:  # graficos
             color="actor afectado",
             title="Actores afectados",
         )
-        fig.update_layout(showlegend=False, xaxis_title="", yaxis_title="")
+        fig.update_layout(showlegend=False,
+                          xaxis_title="Actores afectados", yaxis_title="Casos")
+
         st.plotly_chart(fig, use_container_width=True)
 
         st.write("En cuanto a los actores afectados, se observa que la mayor cantidad de eventos afectan a la población civil, seguido por la policía y los actores no estatales. ")
@@ -317,7 +320,8 @@ with tabPanel:  # graficos
         color="comuna",
         title=None,
     )
-    fig.update_layout(showlegend=False, xaxis_title="", yaxis_title="")
+    fig.update_layout(showlegend=False, xaxis_title="Comunas",
+                      yaxis_title="Casos")
     st.plotly_chart(fig, use_container_width=True)
 
     st.write("La comuna de Ercilla, en la región de la Araucanía, es la que presenta la mayor cantidad de eventos, seguida por la comuna de Collipulli. ")

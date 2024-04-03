@@ -174,8 +174,8 @@ with tabPanel:
     fig.update_xaxes(showgrid=True, showline=True)
     fig.update_yaxes(showgrid=True, showline=True)
     fig.update_layout(showlegend=False,
-                      xaxis_title="",
-                      yaxis_title="",
+                      xaxis_title="Medios",
+                      yaxis_title="Menciones",
                       # yaxis_tickformat="20,.2f"
                       yaxis=dict(tickformat=",.2r")
 
@@ -217,7 +217,7 @@ with tabPanel:
         actores_demandantes.insert(0, "Todos")
 
         actor_demandante = st.multiselect(
-            "", actores_demandantes, default=actores_demandantes)
+            "Actores", actores_demandantes, default=actores_demandantes, label_visibility='hidden')
         if actor_demandante != "Todos":
             df_demandante = df_demandante[df_demandante["Actor demandante"].isin(
                 actor_demandante)]
@@ -234,7 +234,8 @@ with tabPanel:
     )
     fig.update_xaxes(showgrid=True, showline=True)
     fig.update_yaxes(showgrid=True, showline=True)
-    fig.update_layout(showlegend=False, xaxis_title="", yaxis_title="")
+    fig.update_layout(showlegend=False, xaxis_title="Casos",
+                      yaxis_title="Actor")
     st.plotly_chart(fig, use_container_width=True)
 
     # ---------------------------------------------------------------------------
@@ -249,7 +250,7 @@ with tabPanel:
         actores_afectados.insert(0, "Todos")
 
         actor_afectado = st.multiselect(
-            "", actores_afectados, default=actores_afectados)
+            "Actores", actores_afectados, default=actores_afectados, label_visibility='hidden')
         if actor_afectado != "Todos":
             df_afectado = df_afectado[df_afectado["Actor destino de protesta"].isin(
                 actor_afectado)]
@@ -266,7 +267,8 @@ with tabPanel:
     )
     fig.update_xaxes(showgrid=True, showline=True)
     fig.update_yaxes(showgrid=True, showline=True)
-    fig.update_layout(showlegend=False, xaxis_title="", yaxis_title="")
+    fig.update_layout(showlegend=False, xaxis_title="Casos",
+                      yaxis_title="Actor")
     st.plotly_chart(fig, use_container_width=True)
 
     # ---------------------------------------------------------------------------
@@ -286,7 +288,7 @@ with tabPanel:
         conflictos.insert(0, "Todos")
 
         conflicto = st.multiselect(
-            "", conflictos, default=conflictos)
+            "Conflictos", conflictos, default=conflictos, label_visibility='hidden')
         if conflicto != "Todos":
             df_conflict_type = df_conflict_type[df_conflict_type["Tipo de conflicto social"].isin(
                 conflicto)]
@@ -294,7 +296,7 @@ with tabPanel:
             df_conflict_type = df_conflict_type
 
     fig_conflict_type = px.line(df_conflict_type, x="YearMonth", y="count", color="Tipo de conflicto social",
-                                title="")
+                                title="Conflictos")
     fig_conflict_type.update_xaxes(showgrid=True, showline=True)
     fig_conflict_type.update_yaxes(showgrid=True, showline=True)
     fig_conflict_type.update_layout(
