@@ -21,7 +21,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 from millify import millify
-import pygwalker as pgw
+# import pygwalker as pgw
 # from pandasai import SmartDatalake  # para multiples dataframes
 from pandasai import Agent
 from pandasai.llm.openai import OpenAI

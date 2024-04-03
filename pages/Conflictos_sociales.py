@@ -24,7 +24,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 from matplotlib.ticker import FuncFormatter
 from millify import millify
-import pygwalker as pgw
+# import pygwalker as pgw
 from pandasai import SmartDatalake  # para multiples dataframes
 from pandasai import Agent
 from pandasai.llm.openai import OpenAI
